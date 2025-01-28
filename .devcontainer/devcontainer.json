@@ -1,0 +1,43 @@
+{
+  "name": "Tensorflow",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": "."
+  },
+  "shutdownAction": "none",
+  "runArgs": [
+    "--name","giovannesi_varroa_classifier",
+    "--device","nvidia.com/gpu=0",
+    "--ipc",
+    "host"
+  ],
+
+  "postCreateCommand": [],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.testing.pytestArgs": [
+          "."
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true,
+        "python.formatting.provider": "black",
+        "python.linting.enabled": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-toolsai.tensorboard"
+      ]
+    }
+  },
+  "mounts": [
+    {
+      "source": "/run/media/ssd/PRIN/binary_classification", //Replace with the path of your dataset
+      "target": "/dataset",
+      "type": "bind"
+    }
+  ]
+}
