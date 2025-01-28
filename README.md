@@ -18,8 +18,7 @@ python3.11 -m venv env
 ```
 - Run the code to evaluate the model
 ```bash
-source env/bin/activate
 cd src
-python evaluate.py --input_dataset /dataset/varroa_evaluation --model model.pth
+../env/bin/python evaluate.py --input_dataset /dataset --model model.pth
 ```
 The path of the dataset is the folder containing the images
