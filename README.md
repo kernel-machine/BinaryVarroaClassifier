@@ -1,10 +1,16 @@
 ## HOW TO RUN
+This software is build to run with Docker, but your are free to run the code also without the container.
+### Prepare the container (necessary only if you use container)
 
-This software is conterized with Podman, (you can also used Docker)
+- in `.devcontainer/.devcontainer.json` edit the path of the mounted folder with the one of dataset
+- If you are using VSCode, press `Ctrl+Maiusc+P` and then, "build and open in a container "
 
+### Extract the dataset
+Extract the .7z file in the mounted path
+### Run the evaluation code
 - Create a virtual environment with python 
 ```bash
-python -m venv env
+python3.11 -m venv env
 ```
 - Install all the python dependecies
 ```bash
@@ -14,5 +20,6 @@ python -m venv env
 ```bash
 source env/bin/activate
 cd src
-python evaluate.py --input_dataset /dataset/varroa_visible_box --model model.pth
+python evaluate.py --input_dataset /dataset/varroa_evaluation --model model.pth
 ```
+The path of the dataset is the folder containing the images

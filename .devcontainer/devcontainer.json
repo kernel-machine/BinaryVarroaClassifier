@@ -7,9 +7,9 @@
   "shutdownAction": "none",
   "runArgs": [
     "--name","giovannesi_varroa_classifier",
-    "--device","nvidia.com/gpu=0",
+    "--gpus","all",
     "--ipc",
-    "host"
+    "host",
   ],
 
   "postCreateCommand": [],
@@ -35,7 +35,7 @@
   },
   "mounts": [
     {
-      "source": "/run/media/ssd/PRIN/binary_classification", //Replace with the path of your dataset
+      "source": "C:\\Users\\Luca\\Downloads\\varroa_evaluation", //Replace with the path of your dataset
       "target": "/dataset",
       "type": "bind"
     }
